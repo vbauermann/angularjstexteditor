@@ -1,4 +1,4 @@
-angularjstexteditor v1.0.2
+angularjstexteditor v1.0.0
 ===========
 
 ## Requirements
