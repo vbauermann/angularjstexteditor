@@ -3,7 +3,7 @@ angularjstexteditor v1.1.0
 
 ## Release notes
 
-Now you can now add multiple platforms videos that have the ability to embed
+ you can now add multiple platforms videos that have the ability to embed
 
 ## Requirements
 
