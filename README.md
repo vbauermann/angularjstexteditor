@@ -1,5 +1,9 @@
-angularjstexteditor v1.0.0
+angularjstexteditor v1.1.0
 ===========
+
+## Release notes
+
+Now you can now add multiple platforms videos that have the ability to embed
 
 ## Requirements
 
@@ -147,3 +151,5 @@ This project is licensed under the [MIT license](http://opensource.org/licenses/
 Special thanks to all the contributions thus far!
 
 For a full list see: https://github.com/vbauermann/angularjstexteditor/graphs/contributors
+
+
