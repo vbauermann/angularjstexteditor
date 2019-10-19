@@ -1,9 +1,9 @@
-angularjstexteditor v1.1.0
+﻿angularjstexteditor v1.1.1
 ===========
 
 ## Release notes
 
- you can now add multiple platforms videos that have the ability to embed
+enhanced editing area and remove logs
 
 ## Requirements
 
