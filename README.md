@@ -1,5 +1,9 @@
-angularjstexteditor v1.0.0
+﻿angularjstexteditor v1.1.1
 ===========
+
+## Release notes
+
+enhanced editing area and remove logs
 
 ## Requirements
 
@@ -147,3 +151,5 @@ This project is licensed under the [MIT license](http://opensource.org/licenses/
 Special thanks to all the contributions thus far!
 
 For a full list see: https://github.com/vbauermann/angularjstexteditor/graphs/contributors
+
+
