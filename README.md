@@ -1,8 +1,16 @@
-﻿angularjstexteditor v1.1.2
+﻿angularjstexteditor v1.2.0
 ===========
 
 ## Notas da versão
-Iframe de vídeo agora é responsivo ao tamanho da tela do dispositivo
+```html
+   <ul>
+       <li>Alterar tamanho da fonte</li>
+       <li>Alterar cor da fonte</li>
+       <li>Adicionar marcação de texto</li>
+       <li>Correção de bug</li>
+       <li>Melhorado botões</li>
+   </ul>
+```
 
 ## Requisitos
 
@@ -20,11 +28,27 @@ Caso utilize o angularjstexteditor em uma versão acima do 1.6.8 terá problemas
 
 Rode `bower install angularjstexteditor` Por linha de comando, lembre-se de especificar a versão que vai utilizar.
 Inclua as tags similar ao código abaixo:
+
 ```html
-<link rel='stylesheet' href='/bower_components/angularjstexteditor/dist/angularjstexteditor.css'>
-<script src='/bower_components/angularjstexteditor/dist/angularjstexteditor-rangy.min.js'></script>
-<script src='/bower_components/angularjstexteditor/dist/angularjstexteditor-sanitize.min.js'></script>
-<script src='/bower_components/angularjstexteditor/dist/angularjstexteditor.min.js'></script>
+<link rel='stylesheet' href='your_path/angularjstexteditor/dist/angularjstexteditor.css'>
+<script src='your_path/angularjstexteditor/dist/angularjstexteditor-rangy.min.js'></script>
+<script src='your_path/angularjstexteditor/dist/angularjstexteditor-sanitize.min.js'></script>
+<script src='your_path/angularjstexteditor/dist/angularjstexteditor.min.js'></script>
+```
+
+
+## FAQ
+
+Caso tenha problemas com os estilos do tamanho da fonte, color e background-color, utlize a tag 'ta-keep-styles="true"'.
+
+```html
+   <angularjstexteditor ta-keep-styles="true"  ng-model="vm.yourModel"></angularjstexteditor>
+```
+
+Caso tenha problemas com inserção de vídeos utilize a tag 'ta-unsafe-sanitizer="true"'
+
+```html
+    <angularjstexteditor ta-keep-styles="true" ta-unsafe-sanitizer="true" ng-model="vm.yourModel"></angularjstexteditor>
 ```
 
 ## Licensa

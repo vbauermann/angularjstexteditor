@@ -1,3 +1,21 @@
+.btn-angular-text{
+    background: #fdfdfd;
+    padding: 0px 10px;
+    height: 30px;
+    display: flex;
+    font-weight: 500;
+    margin: 5px;
+    border: 1px solid #c9c9c9;
+    color: #373737;
+    font-size: 16px;
+    text-align: center;
+}
+.btn-angular-text:hover{
+    background-color: rgb(131, 131, 131);
+    border: 1px solid #fff;
+    color: #fff;
+}
+
 .angularjsTextEditorVideo{
     border: none !important;
     border-radius: 5px;
@@ -8,7 +26,7 @@
     height: 380px;
 }
 
-@media screen and (max-width:576px){
+@media screen and (max-width:600px){
     .angularjsTextEditorVideo{
         height: auto;
     }
