@@ -51,7 +51,7 @@ Caso tenha problemas com inserção de vídeos utilize a tag 'ta-unsafe-sanitize
     <angularjstexteditor ta-keep-styles="true" ta-unsafe-sanitizer="true" ng-model="vm.yourModel"></angularjstexteditor>
 ```
 
-## Licensa
+## Licença
 Este projeto é licenciado por [MIT license](http://opensource.org/licenses/MIT).
 
 ## Contribuidores
