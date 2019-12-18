@@ -1,14 +1,10 @@
-﻿angularjstexteditor v1.2.0
+﻿angularjstexteditor v1.2.1
 ===========
 
 ## Notas da versão
 ```html
    <ul>
-       <li>Alterar tamanho da fonte</li>
-       <li>Alterar cor da fonte</li>
-       <li>Adicionar marcação de texto</li>
-       <li>Correção de bug</li>
-       <li>Melhorado botões</li>
+       <li>Corrigido Estilos dos botões</li>
    </ul>
 ```
 
