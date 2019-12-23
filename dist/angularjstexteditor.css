@@ -1,19 +1,31 @@
-.btn-angular-text{
-    background: #fdfdfd;
-    padding: 0px 10px !important;
-    height: 25px !important;
+.text-editor-group{
     display: flex;
-    font-weight: 500 !important;
-    margin: 3px !important;
-    border: 1px solid #c9c9c9 !important;
-    color: #404040;
-    font-size: 14px !important;
-    text-align: center !important;
+    width: 100%;
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    background: #393939;
+    align-items: center;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px 5px 0 0;
 }
-.btn-angular-text:hover{
-    background-color: rgb(223, 223, 223);
-    border: 1px solid #fff;
+
+.btn-angular-text{
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
     color: #fff;
+    text-align: center;
+    margin: 5px;
+    transition: 0.15s ease-out;
+    border-radius: 3px;
+}
+
+.btn-angular-text:hover{
+    background-color: #fff;
+    color: #393939;
 }
 
 .angularjsTextEditorVideo{
@@ -47,12 +59,13 @@
 
 /* add generic styling for the editor */
 .ta-root.focussed > .ta-scroll-window.form-control {
-    border-color: #66afe9;
+    border-radius: 0 0 5px 5px;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
+    -webkit-box-shadow: 0 5px 12px #393939;
+    -moz-box-shadow: 0 5px 12px #393939;
+    box-shadow: 0 5px 12px #393939;
+    transition: 0.15s linear all;
+} 
 
 .ta-editor.ta-html, .ta-scroll-window.form-control {
     min-height: 300px;
@@ -60,17 +73,22 @@
     overflow: auto;
     font-family: inherit;
     font-size: 100%;
+    border-radius: 0 0 5px 5px;
 }
 
 .ta-scroll-window.form-control {
     position: relative;
     padding: 0;
+    transition: 0.15s linear all;
 }
 
 .ta-scroll-window > .ta-bind {
     height: auto;
-    min-height: 300px;
-    padding: 6px 12px;
+    min-height: 330px;
+    padding: 10px 10px;
+    outline: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 5px 12px #ddd;
 }
 
 .ta-editor:focus {
