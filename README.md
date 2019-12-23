@@ -1,10 +1,10 @@
-﻿angularjstexteditor v1.2.1
+## angularjstexteditor v1.2.2
 ===========
 
 ## Notas da versão
 ```html
    <ul>
-       <li>Corrigido Estilos dos botões</li>
+       <li>Melhorado estilos do componente</li>
    </ul>
 ```
 
