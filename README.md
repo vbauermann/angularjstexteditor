@@ -1,4 +1,4 @@
-## angularjstexteditor v1.2.1
+## angularjstexteditor v1.2.2
 ===========
 
 ## Notas da versão
