@@ -1,10 +1,10 @@
-## angularjstexteditor v1.2.2
+## angularjstexteditor v1.2.3
 ===========
 
 ## Notas da versão
 ```html
    <ul>
-       <li>Melhorado estilos do componente</li>
+      <li>Ajustes no tratamento de links do youtube ao inserir vídeos</li>
    </ul>
 ```
 
