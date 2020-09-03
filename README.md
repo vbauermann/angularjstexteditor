@@ -51,7 +51,7 @@ Caso tenha problemas com inserção de vídeos utilize a tag 'ta-unsafe-sanitize
 Este projeto é licenciado por [MIT license](http://opensource.org/licenses/MIT).
 
 ## Contribuidores
-```html
+
 <a href="https://github.com/EbenauDev" target="_blank">João Tiago</a>
-```
+
 
