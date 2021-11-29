@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo AngularJs TextEditor</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.0/angular.min.js"
+    integrity="sha512-hOeYY0OneYgutIEzJeDeJx/HxaT94Xjb9Slhn9osr4IYpJMlfIgwF/yRufblVVbaamtiRdULHhybt+XRo48W/Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.0/angular-sanitize.min.js"
+    integrity="sha512-tqjLzE1kjl0GAyd/GGshkz1QWvzZJNeMk9hnqvbu5PozR8XrPmfRucyfOHL49zDj4S2WWxmkSExWdlGuoGC+aw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div ng-app="app">
+    <div ng-controller="DemoController as vm">
+      <h1>{{vm.message}}</h1>
+      <angularjstexteditor ta-keep-styles="true" ng-model="vm.yourModel"></angularjstexteditor>
+    </div>
+  </div>
+  <script>
+    angular.module("app", ["angularjstexteditor"])
+      .controller("DemoController", DemoController);
+
+    DemoController.$inject = [];
+    function DemoController() {
+      var vm = this;
+      vm.message = "Exemplo de utilização do angularjs-texteditor";
+      vm.yourModel = null;
+    }
+  </script>
+
+  <script src="../src/main.js"></script>
+  <script src="../src/angularjstexteditorSetup.js"></script>
+  <script src="../src/DOM.js"></script>
+  <script src="../src/factories.js"></script>
+  <script src="../src/globals.js"></script>
+  <script src="../src/taBind.js"></script>
+  <script src="../src/validators.js"></script>
+</body>
+
+</html>
