@@ -11,7 +11,6 @@ var angularjstexteditor = angular.module("angularjstexteditor",
 angularjstexteditor.config([function () {
     // clear taTools variable. Just catches testing and any other time that this config may run multiple times...
     angular.forEach(taTools, function (value, key) {
-        console.log(key);
         delete taTools[key];
     });
 }]);
@@ -432,7 +431,6 @@ angularjstexteditor.directive("angularjstexteditor", [
                 // compile the scope with the text and html elements only - if we do this with the main element it causes a compile loop
                 $compile(scope.displayElements.scrollWindow)(scope);
                 $compile(scope.displayElements.html)(scope);
-
                 scope.updateTaBindtaTextElement = scope['updateTaBindtaTextElement' + _serial];
                 scope.updateTaBindtaHtmlElement = scope['updateTaBindtaHtmlElement' + _serial];
 
@@ -571,6 +569,7 @@ angularjstexteditor.directive("angularjstexteditor", [
                 };
                 scope.switchView = function () {
                     scope.showHtml = !scope.showHtml;
+                    console.log(scope.showHtml);
                     $animate.enabled(false, scope.displayElements.html);
                     $animate.enabled(false, scope.displayElements.text);
                     //Show the HTML view
@@ -681,54 +680,6 @@ angularjstexteditor.directive("angularjstexteditor", [
                         scope['reApplyOnSelectorHandlerstaTextElement' + _serial]();
                     }
                 });
-
-                /******************* no working fully
-                                var distanceFromPoint = function (px, py, x, y) {
-                                    return Math.sqrt((px-x)*(px-x)+(py-y)*(py-y));
-                                };
-                                // because each object is a rectangle and we have a single point,
-                                // we need to give priority if the point is inside the rectangle
-                                var getPositionDistance = function(el, x, y) {
-                                    var range = document.createRange();
-                                    range.selectNode(el);
-                                    var rect = range.getBoundingClientRect();
-                                    console.log(el, rect);
-                                    range.detach();
-                                    var bcr = rect;
-                                    // top left
-                                    var d1 = distanceFromPoint(bcr.left, bcr.top, x, y);
-                                    // bottom left
-                                    var d2 = distanceFromPoint(bcr.left, bcr.bottom, x, y);
-                                    // top right
-                                    var d3 = distanceFromPoint(bcr.right, bcr.top, x, y);
-                                    // bottom right
-                                    var d4 = distanceFromPoint(bcr.right, bcr.bottom, x, y);
-                                    return Math.min(d1, d2, d3, d4);
-                                };
-                                var findClosest = function(el, minElement, maxDistance, x, y) {
-                                    var _d=0;
-                                    for (var i = 0; i < el.childNodes.length; i++) {
-                                        var _n = el.childNodes[i];
-                                        if (!_n.childNodes.length) {
-                                            _d = getPositionDistance(_n, x, y);
-                                            //console.log(_n, _n.childNodes, _d);
-                                            if (_d < maxDistance) {
-                                                maxDistance = _d;
-                                                minElement = _n;
-                                            }
-                                        }
-                                        var res = findClosest(_n, minElement, maxDistance, x, y);
-                                        if (res.max < maxDistance) {
-                                            maxDistance = res.max;
-                                            minElement = res.min;
-                                        }
-                                    }
-                                    return { max: maxDistance, min: minElement };
-                                };
-                                var getClosestElement = function (el, x, y) {
-                                    return findClosest(el, null, 12341234124, x, y);
-                                };
-                ****************/
 
                 scope.$on('ta-drop-event', function (event, element, dropEvent, dataTransfer) {
                     if (dataTransfer && dataTransfer.files && dataTransfer.files.length > 0) {

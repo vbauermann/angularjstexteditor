@@ -18,7 +18,7 @@ var angularjstexteditorVersion = 'v1.5.16';   // This is automatically updated d
 // ----------------------------------------------------------
 /* istanbul ignore next: untestable browser check */
 var _browserDetect = {
-	ie: (function(){
+	ie: (function () {
 		var undef,
 			v = 3,
 			div = document.createElement('div'),
@@ -39,13 +39,13 @@ var _browserDetect = {
 /* istanbul ignore next: untestable browser check */
 var performance = performance || {};
 /* istanbul ignore next: untestable browser check */
-performance.now = (function() {
-	return performance.now       ||
-		performance.mozNow    ||
-		performance.msNow     ||
-		performance.oNow      ||
+performance.now = (function () {
+	return performance.now ||
+		performance.mozNow ||
+		performance.msNow ||
+		performance.oNow ||
 		performance.webkitNow ||
-		function() { return new Date().getTime(); };
+		function () { return new Date().getTime(); };
 })();
 // usage is:
 // var t0 = performance.now();
@@ -55,8 +55,7 @@ performance.now = (function() {
 //
 
 // turn html into pure text that shows visiblity
-function stripHtmlToText(html)
-{
+function stripHtmlToText(html) {
 	var tmp = document.createElement("DIV");
 	tmp.innerHTML = html;
 	var res = tmp.textContent || tmp.innerText || '';
@@ -65,8 +64,7 @@ function stripHtmlToText(html)
 	return res;
 }
 // get html
-function getDomFromHtml(html)
-{
+function getDomFromHtml(html) {
 	var tmp = document.createElement("DIV");
 	tmp.innerHTML = html;
 	return tmp;
@@ -95,13 +93,13 @@ if (!String.prototype.trim) {
 */
 var sheet, addCSSRule, removeCSSRule, _addCSSRule, _removeCSSRule, _getRuleIndex;
 /* istanbul ignore else: IE <8 test*/
-if(_browserDetect.ie > 8 || _browserDetect.ie === undefined){
+if (_browserDetect.ie > 8 || _browserDetect.ie === undefined) {
 	var _sheets = document.styleSheets;
 	/* istanbul ignore next: preference for stylesheet loaded externally */
-	for(var i = 0; i < _sheets.length; i++){
-		if(_sheets[i].media.length === 0 || _sheets[i].media.mediaText.match(/(all|screen)/ig)){
-			if(_sheets[i].href){
-				if(_sheets[i].href.match(/angularjstexteditor\.(min\.|)css/ig)){
+	for (var i = 0; i < _sheets.length; i++) {
+		if (_sheets[i].media.length === 0 || _sheets[i].media.mediaText.match(/(all|screen)/ig)) {
+			if (_sheets[i].href) {
+				if (_sheets[i].href.match(/angularjstexteditor\.(min\.|)css/ig)) {
 					sheet = _sheets[i];
 					break;
 				}
@@ -109,13 +107,13 @@ if(_browserDetect.ie > 8 || _browserDetect.ie === undefined){
 		}
 	}
 	/* istanbul ignore next: preference for stylesheet loaded externally */
-	if(!sheet){
+	if (!sheet) {
 		// this sheet is used for the placeholders later on.
-		sheet = (function() {
+		sheet = (function () {
 			// Create the <style> tag
 			var style = document.createElement("style");
 			/* istanbul ignore else : WebKit hack :( */
-			if(_browserDetect.webkit) style.appendChild(document.createTextNode(""));
+			if (_browserDetect.webkit) style.appendChild(document.createTextNode(""));
 
 			// Add the <style> element to the page, add as first so the styles can be overridden by custom stylesheets
 			document.getElementsByTagName('head')[0].appendChild(style);
@@ -125,34 +123,34 @@ if(_browserDetect.ie > 8 || _browserDetect.ie === undefined){
 	}
 
 	// use as: addCSSRule("header", "float: left");
-	addCSSRule = function(selector, rules) {
+	addCSSRule = function (selector, rules) {
 		return _addCSSRule(sheet, selector, rules);
 	};
-	_addCSSRule = function(_sheet, selector, rules){
+	_addCSSRule = function (_sheet, selector, rules) {
 		var insertIndex;
 		var insertedRule;
 		// This order is important as IE 11 has both cssRules and rules but they have different lengths - cssRules is correct, rules gives an error in IE 11
 		/* istanbul ignore next: browser catches */
-		if(_sheet.cssRules) insertIndex = Math.max(_sheet.cssRules.length - 1, 0);
-		else if(_sheet.rules) insertIndex = Math.max(_sheet.rules.length - 1, 0);
+		if (_sheet.cssRules) insertIndex = Math.max(_sheet.cssRules.length - 1, 0);
+		else if (_sheet.rules) insertIndex = Math.max(_sheet.rules.length - 1, 0);
 
 		/* istanbul ignore else: untestable IE option */
-		if(_sheet.insertRule) {
+		if (_sheet.insertRule) {
 			_sheet.insertRule(selector + "{" + rules + "}", insertIndex);
 		}
 		else {
 			_sheet.addRule(selector, rules, insertIndex);
 		}
 		/* istanbul ignore next: browser catches */
-		if(sheet.rules) insertedRule = sheet.rules[insertIndex];
-		else if(sheet.cssRules) insertedRule = sheet.cssRules[insertIndex];
+		if (sheet.rules) insertedRule = sheet.rules[insertIndex];
+		else if (sheet.cssRules) insertedRule = sheet.cssRules[insertIndex];
 		// return the inserted stylesheet rule
 		return insertedRule;
 	};
 
-	_getRuleIndex = function(rule, rules) {
+	_getRuleIndex = function (rule, rules) {
 		var i, ruleIndex;
-		for (i=0; i < rules.length; i++) {
+		for (i = 0; i < rules.length; i++) {
 			/* istanbul ignore else: check for correct rule */
 			if (rules[i].cssText === rule.cssText) {
 				ruleIndex = i;
@@ -162,17 +160,17 @@ if(_browserDetect.ie > 8 || _browserDetect.ie === undefined){
 		return ruleIndex;
 	};
 
-	removeCSSRule = function(rule){
+	removeCSSRule = function (rule) {
 		_removeCSSRule(sheet, rule);
 	};
 	/* istanbul ignore next: tests are browser specific */
-	_removeCSSRule = function(sheet, rule){
+	_removeCSSRule = function (sheet, rule) {
 		var rules = sheet.cssRules || sheet.rules;
-		if(!rules || rules.length === 0) return;
+		if (!rules || rules.length === 0) return;
 		var ruleIndex = _getRuleIndex(rule, rules);
-		if(sheet.removeRule){
+		if (sheet.removeRule) {
 			sheet.removeRule(ruleIndex);
-		}else{
+		} else {
 			sheet.deleteRule(ruleIndex);
 		}
 	};
