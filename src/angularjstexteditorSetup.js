@@ -107,13 +107,13 @@ angular.module('angularjstexteditorSetup', [])
         ],
         classes: {
             focussed: "focussed",
-            toolbar: "btn-toolbar",
-            toolbarGroup: "btn-group",
-            toolbarButton: "btn btn-default",
+            toolbar: "text-editor-tolbar",
+            toolbarGroup: "text-editor-group",
+            toolbarButton: "btn-angular-text",
             toolbarButtonActive: "active",
             disabled: "disabled",
-            textEditor: 'form-control',
-            htmlEditor: 'form-control'
+            textEditor: "form-control",
+            htmlEditor: "form-control"
         },
         defaultTagAttributes: {
             a: { target: "" }
@@ -429,11 +429,6 @@ angular.module('angularjstexteditorSetup', [])
                 container.append(buttonGroup);
                 editorScope.showPopover($element);
             },
-            extractYoutubeVideoId: function (url) {
-                var re = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/i;
-                var match = url.match(re);
-                return (match && match[1]) || null;
-            }
         };
     }])
     .run(['taRegisterTool', '$window', 'taTranslations', 'taSelection', 'taToolFunctions', '$sanitize', '$sce', 'taOptions', '$log',
@@ -441,8 +436,6 @@ angular.module('angularjstexteditorSetup', [])
             // test for the version of $sanitize that is in use
             // You can disable this check by setting taOptions.angularjstexteditorSanitize == false
             var gv = {}; $sanitize('', gv);
-            /* istanbul ignore next, throws error */
-            console.log(gv);
             if ((taOptions.forceTextAngularSanitize === true) && (gv.version !== 'taSanitize')) {
                 throw angular.$$minErr('angularjsTextEditor')("angularjstexteditorSetup", "The angularjstexteditorSanitize provider has been replaced by another -- have you included angular-sanitize by mistake?");
             }
@@ -521,7 +514,7 @@ angular.module('angularjstexteditorSetup', [])
                 }
             });
             taRegisterTool('redo', {
-                iconclass: 'fa fa-repeat',
+                iconclass: 'fas fa-redo',
                 tooltiptext: taTranslations.redo.tooltip,
                 action: function () {
                     return this.$editor().wrapSelection("redo", null);
@@ -820,10 +813,8 @@ angular.module('angularjstexteditorSetup', [])
                                         frameborder="0" 
                                         allow="autoplay; fullscreen; picture-in-picture" 
                                         allowfullscreen="true"
-                                        sandbox="allow-same-origin allow-scripts allow-popups"></iframe>`
-                    let htmlTemplateSafe = $sce.trustAsHtml(_template);
-                    console.log(htmlTemplateSafe);
-                    return this.$editor().wrapSelection('insertHTML', htmlTemplateSafe, true);
+                                        sandbox="allow-same-origin allow-scripts allow-popups"></iframe>`;
+                    return this.$editor().wrapSelection('insertHTML', _template, true);
                 },
                 onElementSelect: {
                     element: 'iframe',

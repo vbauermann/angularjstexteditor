@@ -653,7 +653,7 @@ angularjstexteditor.directive("angularjstexteditor", [
                     _editorFunctions = angularjstexteditorManager.registerEditor(scope._name, scope, attrs.taTargetToolbars.split(','));
                 }
                 else {
-                    var _toolbar = angular.element('<div angularjstexteditor-toolbar name="angularjstexteditorToolbar' + _serial + '">');
+                    var _toolbar = angular.element('<div class="text-editor-group" angularjstexteditor-toolbar name="angularjstexteditorToolbar' + _serial + '">');
                     // passthrough init of toolbar options
                     if (attrs.taToolbar) _toolbar.attr('ta-toolbar', attrs.taToolbar);
                     if (attrs.taToolbarClass) _toolbar.attr('ta-toolbar-class', attrs.taToolbarClass);

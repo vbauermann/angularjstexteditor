@@ -107,13 +107,13 @@ angular.module('angularjstexteditorSetup', [])
         ],
         classes: {
             focussed: "focussed",
-            toolbar: "btn-toolbar",
-            toolbarGroup: "btn-group",
-            toolbarButton: "btn btn-default",
+            toolbar: "text-editor-tolbar",
+            toolbarGroup: "text-editor-group",
+            toolbarButton: "btn-angular-text",
             toolbarButtonActive: "active",
             disabled: "disabled",
-            textEditor: 'form-control',
-            htmlEditor: 'form-control'
+            textEditor: "form-control",
+            htmlEditor: "form-control"
         },
         defaultTagAttributes: {
             a: { target: "" }
