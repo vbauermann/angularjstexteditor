@@ -569,7 +569,6 @@ angularjstexteditor.directive("angularjstexteditor", [
                 };
                 scope.switchView = function () {
                     scope.showHtml = !scope.showHtml;
-                    console.log(scope.showHtml);
                     $animate.enabled(false, scope.displayElements.html);
                     $animate.enabled(false, scope.displayElements.text);
                     //Show the HTML view

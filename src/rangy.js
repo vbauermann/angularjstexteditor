@@ -10,6 +10,7 @@
 
 (function (factory, root) {
   if (typeof define == "function" && define.amd) {
+    console.log(define);
     // AMD. Register as an anonymous module.
     define(factory);
   } else if (typeof module != "undefined" && typeof exports == "object") {
