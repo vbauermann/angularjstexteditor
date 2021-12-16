@@ -1,5 +1,5 @@
 .text-editor-tolbar {
-    --color-toolbar: #3b3b3b;
+    --color-toolbar: #f6f6f6;
     display        : flex;
     width          : 100%;
     height         : auto;
@@ -21,16 +21,16 @@
     background-color: transparent;
     border          : none;
     padding         : 5px 10px;
-    color           : #fff;
+    color           : #222;
     text-align      : center;
     margin          : 5px;
     transition      : 0.15s ease-out;
     border-radius   : 3px;
 }
 
-.btn-angular-text:hover {
-    background-color: #fff;
-    color           : #393939;
+.btn-angular-text--active {
+    background-color: #d9d9d9;
+    color           : #2e2e2e;
 }
 
 
@@ -49,31 +49,32 @@
 
 /* add generic styling for the editor */
 .ta-root.focussed>.ta-scroll-window.form-control {
-    border-radius     : 0 0 5px 5px;
-    outline           : 0;
-    -webkit-box-shadow: 0 5px 12px #393939;
-    -moz-box-shadow   : 0 5px 12px #393939;
-    box-shadow        : 0 1px 5px #000000cc;
-    transition        : box-shadow 0.2s ease-in-out;
-    border            : 1px solid #6c6c6ccc;
+    border-radius        : 0 0 5px 5px;
+    outline              : 0;
+    /* -webkit-box-shadow: 0 5px 12px #393939;
+    -moz-box-shadow      : 0 5px 12px #393939;
+    box-shadow           : 0 1px 5px #000000cc; */
+    transition           : box-shadow 0.2s ease-in-out;
+    border               : 1px solid #6c6c6ccc;
 
 }
 
 .ta-editor.ta-html,
 .ta-scroll-window.form-control {
-    min-height   : 300px;
-    height       : auto;
-    overflow     : auto;
-    font-family  : inherit;
-    font-size    : 100%;
-    border-radius: 0 0 5px 5px;
+    min-height : 370px;
+    padding    : 15px 20px;
+    height     : auto;
+    overflow   : auto;
+    font-family: inherit;
+    font-size  : 100%;
 }
 
 .ta-editor.ta-html,
 .ta-scroll-window.form-control:focus {
-    -webkit-box-shadow: 0 5px 12px #393939;
-    -moz-box-shadow   : 0 5px 12px #393939;
-    box-shadow        : 0 1px 5px #000000cc;
+    --shadow          : #9d9d9d;
+    -webkit-box-shadow: 0 3px 6px var(--shadow);
+    -moz-box-shadow   : 0 3px 6px var(--shadow);
+    box-shadow        : 0 3px 6px var(--shadow);
     border            : none;
     border            : 1px solid #6c6c6ccc;
 }
@@ -85,12 +86,10 @@
 }
 
 .ta-scroll-window>.ta-bind {
-    height       : auto;
-    min-height   : 330px;
-    padding      : 10px 10px;
-    outline      : none;
-    border-radius: 0 0 5px 5px;
-    box-shadow   : 0 5px 12px #ddd;
+    height    : auto;
+    min-height: 370px;
+    padding   : 15px 20px;
+    outline   : none;
 }
 
 .ta-editor:focus {
@@ -255,4 +254,11 @@
     content            : " ";
     border-top-width   : 0;
     border-bottom-color: #fff;
+}
+
+blockquote {
+    padding    : 10px 20px;
+    margin     : 0 0 20px;
+    font-size  : 17.5px;
+    border-left: 5px solid #eee;
 }

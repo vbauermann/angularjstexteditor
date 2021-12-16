@@ -1,7 +1,8 @@
 // this global var is used to prevent multiple fires of the drop event. Needs to be global to the angularjstexteditor file.
 var dropFired = false;
 var angularjstexteditor = angular.module("angularjstexteditor",
-    ['ngSanitize',
+    ['angularjstexteditorRangy',
+        'ngSanitize',
         'angularjstexteditorSetup',
         'angularjstexteditor.factories',
         'angularjstexteditor.DOM',
@@ -17,9 +18,9 @@ angularjstexteditor.config([function () {
 
 angularjstexteditor.directive("angularjstexteditor", [
     '$compile', '$timeout', 'taOptions', 'taSelection', 'taExecCommand',
-    'angularjstexteditorManager', '$document', '$animate', '$log', '$q', '$parse',
+    'angularjstexteditorManager', '$document', '$animate', '$log', '$q', '$parse', '$rangy',
     function ($compile, $timeout, taOptions, taSelection, taExecCommand,
-        angularjstexteditorManager, $document, $animate, $log, $q, $parse) {
+        angularjstexteditorManager, $document, $animate, $log, $q, $parse, $rangy) {
         return {
             require: '?ngModel',
             scope: {},
@@ -27,11 +28,12 @@ angularjstexteditor.directive("angularjstexteditor", [
             priority: 2, // So we override validators correctly
             link: function (scope, element, attrs, ngModel) {
                 // all these vars should not be accessable outside this directive
-                var _keydown, _keyup, _keypress, _mouseup, _focusin, _focusout,
+                const rangy = $rangy.rangy;
+                let _keydown, _keyup, _keypress, _mouseup, _focusin, _focusout,
                     _originalContents, _editorFunctions,
                     _serial = (attrs.serial) ? attrs.serial : Math.floor(Math.random() * 10000000000000000),
                     _taExecCommand, _resizeMouseDown, _updateSelectedStylesTimeout;
-                var _resizeTimeout;
+                let _resizeTimeout;
 
                 scope._name = (attrs.name) ? attrs.name : 'angularjstexteditorEditor' + _serial;
 

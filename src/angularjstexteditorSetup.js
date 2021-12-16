@@ -72,7 +72,7 @@ angular.module('angularjstexteditorSetup', [])
         // forceTextAngularSanitize
         // set false to allow the angularjstexteditor-sanitize provider to be replaced
         // with angular-sanitize or a custom provider.
-        forceTextAngularSanitize: true,
+        forceTextAngularSanitize: false,
         ///////////////////////////////////////////////////////////////////////////////////////
         // keyMappings
         // allow customizable keyMappings for specialized key boards or languages
@@ -110,7 +110,7 @@ angular.module('angularjstexteditorSetup', [])
             toolbar: "text-editor-tolbar",
             toolbarGroup: "text-editor-group",
             toolbarButton: "btn-angular-text",
-            toolbarButtonActive: "active",
+            toolbarButtonActive: "btn-angular-text--active",
             disabled: "disabled",
             textEditor: "form-control",
             htmlEditor: "form-control"
@@ -177,65 +177,65 @@ angular.module('angularjstexteditorSetup', [])
         //insertLink: "Please enter a URL to insert",
         //insertVideo: "Please enter a youtube URL to embed",
         html: {
-            tooltip: 'Toggle html / Rich Text'
+            tooltip: 'Alternar entre HTML e texto'
         },
         // tooltip for heading - might be worth splitting
         heading: {
-            tooltip: 'Heading '
+            tooltip: 'Título '
         },
         p: {
-            tooltip: 'Paragraph'
+            tooltip: 'Parágrafo'
         },
         pre: {
-            tooltip: 'Preformatted text'
+            tooltip: 'Texto pré formatado'
         },
         ul: {
-            tooltip: 'Unordered List'
+            tooltip: 'Lista'
         },
         ol: {
-            tooltip: 'Ordered List'
+            tooltip: 'Lista ordenada'
         },
         quote: {
-            tooltip: 'Quote/unquote selection or paragraph'
+            tooltip: 'Menção'
         },
         undo: {
-            tooltip: 'Undo'
+            tooltip: 'Desfazer'
         },
         redo: {
-            tooltip: 'Redo'
+            tooltip: 'Refazer'
         },
         bold: {
-            tooltip: 'Bold'
+            tooltip: 'Negrito'
         },
         italic: {
-            tooltip: 'Italic'
+            tooltip: 'Itálico'
         },
         underline: {
             tooltip: 'Underline'
         },
         strikeThrough: {
-            tooltip: 'Strikethrough'
+            tooltip: 'Sublinhado'
         },
         justifyLeft: {
-            tooltip: 'Align text left'
+            tooltip: 'Texto alinhado a esquerda'
         },
         justifyRight: {
-            tooltip: 'Align text right'
+            tooltip: 'Texto alinhado a direita'
         },
         justifyFull: {
-            tooltip: 'Justify text'
+            tooltip: 'Texto justificado'
         },
         justifyCenter: {
-            tooltip: 'Center'
+            tooltip: 'Centro'
         },
         indent: {
-            tooltip: 'Increase indent'
+            tooltip: 'Identar'
         },
         outdent: {
             tooltip: 'Decrease indent'
         },
         clear: {
-            tooltip: 'Clear formatting'
+            tooltip: 'Limpar formatação'
         },
         insertImage: {
             dialogPrompt: 'Please enter an image URL to insert',
@@ -243,12 +243,12 @@ angular.module('angularjstexteditorSetup', [])
             hotkey: 'the - possibly language dependent hotkey ... for some future implementation'
         },
         insertVideo: {
-            tooltip: 'Insert video',
-            dialogPrompt: 'Please enter a youtube URL to embed'
+            tooltip: 'Inserir vídeo',
+            dialogPrompt: 'Por favor insira a URL do vídeo'
         },
         insertLink: {
             tooltip: 'Insert / edit link',
-            dialogPrompt: "Please enter a URL to insert"
+            dialogPrompt: "Por favor informe a URL do link"
         },
         editLink: {
             reLinkButton: {
@@ -258,14 +258,14 @@ angular.module('angularjstexteditorSetup', [])
                 tooltip: "Unlink"
             },
             targetToggle: {
-                buttontext: "Open in New Window"
+                buttontext: "Abrir em uma nova janela"
             }
         },
         wordcount: {
-            tooltip: 'Display words Count'
+            tooltip: 'Quantidade de palavras'
         },
         charcount: {
-            tooltip: 'Display characters Count'
+            tooltip: 'Quantidade de caracteres'
         }
     })
     .factory('taToolFunctions', ['$window', 'taTranslations', function ($window, taTranslations) {

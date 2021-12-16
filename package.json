@@ -10,9 +10,7 @@
   ],
   "license": "MIT",
   "main": "./dist/angularjstexteditor.umd.js",
-  "dependencies": {
-    "rangy": "^1.3.0"
-  },
+  "dependencies": {},
   "browserDependencies": {
     "angular": "^1.2.x",
     "bootstrap": "^3.0.x",
