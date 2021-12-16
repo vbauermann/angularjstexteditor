@@ -18,3 +18,9 @@ Para que o componente funcione é necessário ter as importações na seguinte o
   <script src="../dist/angularjstexteditorSetup.min.js"></script>
   <script src="../dist/angularjstexteditor.min.js"></script>
 ```
+### Para não ter problemas com algumas tags ou estilos se perdendo, o componente deve estar conforme abaixo
+
+```html
+     <angularjstexteditor ta-keep-styles="true" ng-model="vm.meuTextoPersonalizado" ta-unsafe-sanitizer="true">
+      </angularjstexteditor>
+```
