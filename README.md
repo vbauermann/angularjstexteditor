@@ -28,7 +28,7 @@ Para que o componente funcione é necessário ter as importações na seguinte o
 
 ## Requisitos
 
-1. `AngularJS` ≥ `1.6.x` Caso utilize a versão acima de 1.6.* terá problemas com lowercase
+1. `AngularJS` ≥ `1.6.x` Preferência a mais recente
 3. `Font-Awesome` ≥ `4.x` Preferência a mais recente
 1. `Bootstrap` ≥ `3.x` Preferência a mais recente
 
