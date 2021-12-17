@@ -1,4 +1,4 @@
-const { src, dest, task } = require('gulp');
+const { src, dest, task, series } = require('gulp');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const less = require('gulp-less');
@@ -48,3 +48,11 @@ task("[PROD][TEXTEDITOR]", () => {
     .pipe(concat('angularjstexteditor.min.js'))
     .pipe(dest(pathDist));
 });
+
+
+
+task('[RUN][PROD]', series('[PROD][LESS]', '[PROD][SANITIZE]', '[PROD][RANGY]', '[PROD][SETUP]', '[PROD][TEXTEDITOR]',
+  function (done) {
+    done();
+  })
+);
