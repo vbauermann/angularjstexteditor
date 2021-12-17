@@ -226,28 +226,27 @@ angular.module('angularjstexteditorSetup', [])
             tooltip: 'Texto justificado'
         },
         justifyCenter: {
-            tooltip: 'Centro'
+            tooltip: 'Texto alinhado ao centro'
         },
         indent: {
-            tooltip: 'Identar'
+            tooltip: 'Aumentar recuo'
         },
         outdent: {
-            tooltip: 'Decrease indent'
+            tooltip: 'Diminiuir recuo'
         },
         clear: {
             tooltip: 'Limpar formatação'
         },
         insertImage: {
-            dialogPrompt: 'Please enter an image URL to insert',
-            tooltip: 'Insert image',
-            hotkey: 'the - possibly language dependent hotkey ... for some future implementation'
+            dialogPrompt: 'Por favor insira a URL da imagem',
+            tooltip: 'Inserir imagem',
         },
         insertVideo: {
             tooltip: 'Inserir vídeo',
             dialogPrompt: 'Por favor insira a URL do vídeo'
         },
         insertLink: {
-            tooltip: 'Insert / edit link',
+            tooltip: 'Inserir / editar link',
             dialogPrompt: "Por favor informe a URL do link"
         },
         editLink: {
@@ -852,7 +851,7 @@ angular.module('angularjstexteditorSetup', [])
                 }
             });
             taRegisterTool('wordcount', {
-                display: '<div id="toolbarWC" style="display:block; min-width:100px;">Words: <span ng-bind="wordcount"></span></div>',
+                display: '<div id="toolbarWC" style="display:block; min-width:100px;">Palavras: <span ng-bind="wordcount"></span></div>',
                 disabled: true,
                 wordcount: 0,
                 activeState: function () { // this fires on keyup
@@ -881,7 +880,7 @@ angular.module('angularjstexteditorSetup', [])
                 }
             });
             taRegisterTool('charcount', {
-                display: '<div id="toolbarCC" style="display:block; min-width:120px;">Characters: <span ng-bind="charcount"></span></div>',
+                display: '<div id="toolbarCC" style="display:block; min-width:120px;">Caracteres: <span ng-bind="charcount"></span></div>',
                 disabled: true,
                 charcount: 0,
                 activeState: function () { // this fires on keyup

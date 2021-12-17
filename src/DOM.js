@@ -1,7 +1,9 @@
 angular.module('angularjstexteditor.DOM', ['angularjstexteditor.factories'])
-    .factory('taExecCommand', ['taSelection', 'taBrowserTag', '$document', function (taSelection, taBrowserTag, $document) {
+    .factory('taExecCommand', ['taSelection', 'taBrowserTag', '$document', '$rangy', function (taSelection, taBrowserTag, $document, $rangy) {
         var listToDefault = function (listElement, defaultWrap) {
             var $target, i;
+            const rangy = $rangy.rangy;
+
             // if all selected then we should remove the list
             // grab all li elements and convert to taDefaultWrap tags
             var children = listElement.find('li');
@@ -208,6 +210,7 @@ angular.module('angularjstexteditor.DOM', ['angularjstexteditor.factories'])
             taDefaultWrap = taBrowserTag(taDefaultWrap);
             return function (command, showUI, options, defaultTagAttributes) {
                 var i, $target, html, _nodes, next, optionsTagName, selectedElement, ourSelection;
+                const rangy = $rangy.rangy;
                 var defaultWrapper = angular.element('<' + taDefaultWrap + '>');
                 try {
                     if (taSelection.getSelection) {

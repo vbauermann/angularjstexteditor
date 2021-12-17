@@ -32,7 +32,7 @@
     "merge-stream": "^2.0.0"
   },
   "scripts": {
-    "build": "yarn gulp [build]"
+    "build": "yarn gulp [PROD][LESS]"
   },
   "repository": {
     "type": "git",

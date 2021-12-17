@@ -1,13 +1,7 @@
-# AngularJsTextEditor 2.0.0
+# AngularJsTextEditor 2.0.10
 Melhorias que foram feitas nesse projeto.
-
-1. Encapsulado o rangy em um módulo angularjs
-   - Essa mexida tem o intuito de evitar problemas caso se utilize o webpack como bundle
-2. Ajustado UI do componente
-3. Ajustado angularjstexteditorSanitize para ser compátivel com versões mais novas do angularJs
-4. Melhorias de estilo
-5. Ajustado build para ser feito utilizando gulp
-6. Removido alguma ferramentas que não estavam sendo utilizadas
+1. Corrigido problema ao gerar links
+2. Corrigido tooltip do botões da toolbar
 
 # Como deve ser utilizado?
 Para que o componente funcione é necessário ter as importações na seguinte ordem:
@@ -25,13 +19,11 @@ Para que o componente funcione é necessário ter as importações na seguinte o
       </angularjstexteditor>
 ```
 
-
 ## Requisitos
 
 1. `AngularJS` ≥ `1.6.x` Preferência a mais recente
 3. `Font-Awesome` ≥ `4.x` Preferência a mais recente
 1. `Bootstrap` ≥ `3.x` Preferência a mais recente
-
 
 
 ## Licença
