@@ -103,7 +103,7 @@ angular.module('angularjstexteditorSetup', [])
             ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
             ['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],
             ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent'],
-            ['html', 'insertImage', 'insertLink', 'insertVideo', 'wordcount', 'charcount']
+            ['html', 'insertImage', 'insertLink', 'insertVideo', 'insertPDF', 'wordcount', 'charcount']
         ],
         classes: {
             focussed: "focussed",
@@ -244,6 +244,10 @@ angular.module('angularjstexteditorSetup', [])
         insertVideo: {
             tooltip: 'Inserir vídeo',
             dialogPrompt: 'Por favor insira a URL do vídeo'
+        },
+        insertPDF: {
+            tooltip: 'Inserir documento PDF',
+            dialogPrompt: 'Por favor insira o link do seu PDF'
         },
         insertLink: {
             tooltip: 'Inserir / editar link',
@@ -796,6 +800,24 @@ angular.module('angularjstexteditorSetup', [])
                     action: taToolFunctions.imgOnSelectAction
                 }
             });
+            taRegisterTool('insertPDF', {
+                iconclass: 'fas fa-file-pdf',
+                tooltiptext: taTranslations.insertPDF.tooltip,
+                action: function () {
+                    var urlPrompt;
+                    urlPrompt = $window.prompt(taTranslations.insertPDF.dialogPrompt, 'https://');
+                    if (blockJavascript(urlPrompt))
+                        return;
+                    if (urlPrompt.indexOf(".pdf") < 0)
+                        return;
+                    let _safeURl = $sce.trustAsResourceUrl(urlPrompt);
+                    let _template = `<iframe class="ta-pdf-document" 
+                                             src="http://docs.google.com/gview?url=${_safeURl}&embedded=true"  
+                                             frameborder="0"
+                                             sandbox="allow-same-origin allow-scripts allow-popups"></iframe>`
+                    return this.$editor().wrapSelection('insertHTML', _template, true);
+                },
+            });
             taRegisterTool('insertVideo', {
                 iconclass: 'fas fa-play-circle',
                 tooltiptext: taTranslations.insertVideo.tooltip,
@@ -804,6 +826,7 @@ angular.module('angularjstexteditorSetup', [])
                     urlPrompt = $window.prompt(taTranslations.insertVideo.dialogPrompt, 'https://');
                     if (blockJavascript(urlPrompt))
                         return;
+
                     let _safeURl = $sce.trustAsResourceUrl(urlPrompt);
                     let _template = `<iframe src="${_safeURl}"
                                         class="ta-iframe-video"
