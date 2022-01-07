@@ -1,6 +1,6 @@
 {
   "name": "angularjstexteditor",
-  "version": "2.0.10",
+  "version": "2.1.0",
   "main": [
     "./dist/angularjstexteditor.min.js",
     "./dist/angularjstexteditorSanitize.min.js",

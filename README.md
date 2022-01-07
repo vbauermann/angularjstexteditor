@@ -1,7 +1,6 @@
-# AngularJsTextEditor 2.0.10
+# AngularJsTextEditor 2.1.0
 Melhorias que foram feitas nesse projeto.
-1. Corrigido problema ao gerar links
-2. Corrigido tooltip do botões da toolbar
+1. Adicionado a opção de adicionar link para arquivos PDF
 
 # Como deve ser utilizado?
 Para que o componente funcione é necessário ter as importações na seguinte ordem:
