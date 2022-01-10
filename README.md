@@ -1,6 +1,6 @@
-# AngularJsTextEditor 2.1.0
+# AngularJsTextEditor 2.1.1
 Melhorias que foram feitas nesse projeto.
-1. Adicionado a opção de adicionar link para arquivos PDF
+1. Ajustado inclusão de arquivo PDF
 
 # Como deve ser utilizado?
 Para que o componente funcione é necessário ter as importações na seguinte ordem:
