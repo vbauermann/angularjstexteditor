@@ -808,11 +808,13 @@ angular.module('angularjstexteditorSetup', [])
                     urlPrompt = $window.prompt(taTranslations.insertPDF.dialogPrompt, 'https://');
                     if (blockJavascript(urlPrompt))
                         return;
-                    if (urlPrompt.indexOf(".pdf") < 0)
+                    if (urlPrompt.indexOf(".pdf") < 0) {
+                        alert("O arquivo não esta no formato .PDF");
                         return;
+                    }
                     let _safeURl = $sce.trustAsResourceUrl(urlPrompt);
                     let _template = `<iframe class="ta-pdf-document" 
-                                             src="http://docs.google.com/gview?url=${_safeURl}&embedded=true"  
+                                             src="https://docs.google.com/gview?url=${_safeURl}&embedded=true"  
                                              frameborder="0"
                                              sandbox="allow-same-origin allow-scripts allow-popups"></iframe>`
                     return this.$editor().wrapSelection('insertHTML', _template, true);
