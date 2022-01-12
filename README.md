@@ -1,7 +1,7 @@
 # AngularJsTextEditor 2.1.2
 Melhorias que foram feitas nesse projeto.
 1. Melhorias de estilo de UI
-
+=======
 # Como deve ser utilizado?
 Para que o componente funcione é necessário ter as importações na seguinte ordem:
 
@@ -20,7 +20,7 @@ Para que o componente funcione é necessário ter as importações na seguinte o
 
 ## Requisitos
 
-1. `AngularJS` ≥ `1.6.x` Preferência a mais recente
+1. `AngularJS` ≥ `1.8.x` mais recente
 3. `Font-Awesome` ≥ `4.x` Preferência a mais recente
 1. `Bootstrap` ≥ `3.x` Preferência a mais recente
 
